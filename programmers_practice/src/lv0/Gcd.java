@@ -6,11 +6,12 @@ package lv0;
 public class Gcd {
 	
 	public int gcdNumber(int a, int b) {
-		if(b==0) {
-			return a;
-		}else {
-			return gcdNumber(b,a%b);
+		while(b != 0) {
+			int r = a%b;
+			a = b;
+			b = r;
 		}
+		return a; // 최대 공약수
 	}
 
 	 public int[] solution(int numer1, int denom1, int numer2, int denom2) {
